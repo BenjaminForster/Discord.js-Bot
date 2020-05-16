@@ -17,12 +17,6 @@ A log function that allows you to make the bot send a message to a log channel /
 
 A timed mute command.
 
-A kick command.
-
-A softban command.
-
-A ban command.
-
 # Upcoming features
 In the future I am hoping to be able to add more features. Here are the ones I am hoping to add:
 
@@ -33,3 +27,9 @@ A striking system using a database of some kind.
 A music player.
 
 Possibly try to create a dashboard online instead, but I doubt that this will be done unless I find out a way to do it automatically as I have little to no experience with HTML5.
+
+A kick command.
+
+A softban command.
+
+A ban command.
