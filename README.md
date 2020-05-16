@@ -14,9 +14,13 @@ This bot was made by me. If you want to know more about it, you can add me on Di
 This bot includes multiple features. Here are some of them:
 
 A log function that allows you to make the bot send a message to a log channel / specific text channel that says who did what and in what channel.
+
 A timed mute command.
+
 A kick command.
+
 A softban command.
+
 A ban command.
 
 # Upcoming features
