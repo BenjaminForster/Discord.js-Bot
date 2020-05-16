@@ -1,0 +1,14 @@
+{
+    "prefix": "prefix here",
+    "token": "bot token here",
+    "welcome": "welcome channel id here",
+    "servername": "server name here",
+    "logchannel": "log channel id here",
+    "version": "version here",
+    "embedcolor": "the universal embed color here",
+    "commandchannel": "command channel id here",
+    "memberrole": "member role id here",
+    "mutedrole": "muted role id here",
+    "verifychannel": "verification channel id here",
+    "verifyrole": "the verification role here"
+}
