@@ -33,3 +33,32 @@ A striking system using a database of some kind.
 A music player.
 
 Possibly try to create a dashboard online instead, but I doubt that this will be done unless I find out a way to do it automatically as I have little to no experience with HTML5.
+
+# Installation
+Here I will explain the config.json file, and what you need to put in it.
+
+The prefix is the beginning of each command. An example of this is !.
+
+The token is where you put your bot token.
+
+The welcome is where you put the welcome channel ID.
+
+The server name is where you put the server name.
+
+The log channel is where you put the log channel ID.
+
+The version is the version. I left this blank for ease of use when I upload it.
+
+The embed color allows you to change the universal color of all the embeds. It uses HEX code.
+
+The command channel is the channel that you allow commands in. Normal commandes (except for staff commands) are only available in the command channel to avoid spam.
+
+The member role is the ID for the member / user role, aka the normal role.
+
+The muted role is the ID for the muted role.
+
+The verify channel is where you put the ID of the verification channel.
+
+The verify role 1 and 2 is where you put the roles that are added when someone verifies themselves using !verify in the verification channel.
+
+The administrator, owner and moderator configs is where you put the role id's to the respective roles.
