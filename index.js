@@ -126,5 +126,20 @@ bot.on('message', message => {
             bot.commands.get('mute').execute(message, args);
         break;
 
+        // Case for the soft ban command.
+        case "softban":
+            bot.commands.get('softban').execute(message, args);
+        break;
+
+        // Case for the kick command.
+        case "kick":
+            bot.commands.get('kick').execute(message, args);
+        break;
+
+        // Case for the ban command.
+        case "ban":
+            bot.commands.get('ban').execute(message, args);
+        break;
+
     }
 })

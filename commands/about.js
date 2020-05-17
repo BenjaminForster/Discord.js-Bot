@@ -19,10 +19,10 @@ module.exports = {
         .setTitle(`${botconfig.servername} bot`)
 
         // Sets the description.
-        .setDescription("This bot was created for the offical TCH Gang Discord server.")
+        .setDescription("This bot was created for the offical Open Source Discord server.")
         
         // Adds two new fields.
-        .addField("Author", "LoggyDogDog is the creator and maintainer of the TCH Bot.")
+        .addField("Author", "LoggyDogDog is the creator and maintainer of the Open Source Bot.")
         .addField("Bugs / Suggestions", "If you have encountered any bugs or have any suggestions on what to add, feel free to DM LoggyDogDog about it.")
 
         // Sets the footer.

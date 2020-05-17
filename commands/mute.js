@@ -14,7 +14,7 @@ module.exports = {
         // MS is used for the time function. You can install it by typing "npm install ms".
         const ms = require('ms');
 
-        // This defines member as the first person that get's mentioned in the message.
+        // This defines member as the first person that gets mentioned in the message.
         let member = message.guild.member(message.mentions.users.first());
 
         // If there is no member defined this will say that it could not find anyone by that name.
@@ -49,23 +49,42 @@ module.exports = {
         // Sends a message mentioning the person who got muted and how long they are muted for.
         message.channel.send(`<@${member.user.id}> has now been muted for ${ms(ms(time))}`);
 
-        
+        // START OF LOG FEATURE.
         
         // This part will send a message to a specific channel saying who muted who for how long and in what channel. It is basically a log command.
         // It can be commented out if you prefer to not have this. 
-        const channel = message.client.channels.cache.get(botconfig.logchannel)
+        const logchannel = message.client.channels.cache.get(botconfig.logchannel)
         
         // Makes sure that there is a channel with that ID. If there is not, it will log the error to the console.
-        if(!channel) {
+        if(!logchannel) {
             console.log("No log channel with that ID!")
             return;
         }
 
-        // Sends the log. It includes the message author's tag, their ID, how many messages they purged and in what channel.
-        channel.send(`${message.author.tag} (ID: ${message.author.id}) muted ${member.user.tag} (ID ${member.user.id}) for ${ms(ms(time))} in channel ${message.channel}.`)
-        
-        
+        // Defines some stuff.
+        const Discord = require('discord.js');
+        const mutelog = new Discord.MessageEmbed()
 
+        // This part edits the embed. It is pretty self-explanitory. The color is in the config.json file and can be edited.
+        .setColor(botconfig.embedcolor)
+
+        // Sets the title.
+        .setTitle(`Mute log`)
+        
+        // Adds three new fields.
+        .addField(`Staff member:`, `${message.author.tag}, ID: ${message.author.id}.`)
+        .addField(`Muted:`, `${member.user.tag}, ID: ${member.user.id}.`)
+        .addField(`Time:`, `Muted for ${ms(ms(time))}.`)
+        .addField(`Channel:`, `Command was executed in channel ${message.channel}.`)
+        
+        // Sets the footer.
+        .setFooter("Open Source Bot, made and maintained by LoggyDogDog.")
+
+        // Sends the log embed.
+        logchannel.send(mutelog)
+
+        // END OF LOG FEATURE.
+        
         // This is the time function. When the time is done:
         setTimeout(function() {
 
@@ -75,9 +94,6 @@ module.exports = {
 
             // Sends a message mentioning the person saying that they have been unmuted.
             message.channel.send(`<@${member.user.id}> has been unmuted.`)
-
-            // This is part of the log system. You can comment this out if you prefer to not have logs.
-            channel.send(`${member.user.tag} (ID ${member.user.id}) has been unmuted.`)
 
         }, ms(time));
 
